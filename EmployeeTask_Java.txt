@@ -1,0 +1,26 @@
+public static void main(String args[]) {
+
+        class startTime{
+            int date=0,month=0,year=0;
+            startTime(int date,int month,int year){
+                this.date=date;
+                this.month=month;
+                this.year=year;
+            }
+        }
+        class Leaves{
+            int date=0,month=0,year=0;
+            Leaves(int date,int month,int year){
+                this.date=date;
+                this.month=month;
+                this.year=year;
+            }
+        }
+      getEndTime( startTime st,long timeRequired ,startTime[]workingHouseStart,startTime []workingHourEnd,List<Leaves>ll){
+
+             long numDays=timeRequired/24;
+             long hrsLeft=timeRequired%24;
+
+             
+      }
+    }
