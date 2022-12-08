@@ -1,0 +1,92 @@
+public class Main {
+    public static void main(String args[]) {
+
+        class startTime{
+            int date=0,month=0,year=0;
+            startTime(int date,int month,int year){
+                this.date=date;
+                this.month=month;
+                this.year=year;
+            }
+             startTime(){
+             }
+        }
+        class Leaves{
+            int date=0,month=0,year=0;
+            Leaves(int date,int month,int year){
+                this.date=date;
+                this.month=month;
+                this.year=year;
+            }
+        }
+     startTime getEndTime( startTime st,long timeRequired ,int[]workingHouseStart,int []workingHourEnd,List<Leaves>ll){
+
+
+               startTime end=new startTime();
+        //      long numDays=timeRequired/24;
+        //      long hrsLeft=timeRequired%24;
+           
+        //    long numMonth=numDays/30;
+        //    long daysLeft=numDays%30;
+
+        //          long numYrs=numMonth/12;
+        //    long monthLeft=numMonth%12;
+             
+
+        //      end.year= st.year+numYrs;
+        //      end.month=st.month+monthLeft;
+        //      end.date=st.date+daysLeft;
+
+        //       if(end.date>30){
+        //          end.month+=(end.date%30);
+        //      }
+        //      if(end.month>12){
+        //          end.year+=(end.month%12);
+        //      }
+
+           
+             
+             for(int i=0;i<workingHouseStart.length;i++ ){
+
+                   int totalhrs=workingHourEnd[i]-workingHouseStart[i];
+                    long numDays=totalhrs/24;
+                     long hrsLeft=totalhrs%24;
+           
+           long numMonth=numDays/30;
+           long daysLeft=numDays%30;
+
+                 long numYrs=numMonth/12;
+           long monthLeft=numMonth%12;
+             
+
+             end.year= st.year+numYrs;
+             end.month=st.month+monthLeft;
+             end.date=st.date+daysLeft;
+
+              if(end.date>30){
+                 end.month+=(end.date%30);
+             }
+             if(end.month>12){
+                 end.year+=(end.month%12);
+             }
+
+                for(Leaves ele:ll){
+
+                if(ele.date<=end.date&&ele.month<=end.month&&ele.year==end.year&&ele.date>=st.date&&ele.month>=st.month&&ele.year==end.year){
+                     end.date+=24;
+
+              if(end.date>30){
+                 end.month+=(end.date%30);
+             }
+             if(end.month>12){
+                 end.year+=(end.month%12);
+             }
+                }
+                 end.date= end.date%30;
+            }
+
+             }
+         return end;
+      }
+    }
+}
